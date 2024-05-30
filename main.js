@@ -62,12 +62,6 @@ function spacing(type, cssVariables, originalGap, setSize) {
     }
     const height = parseInt(getComputedStyle(cssVariables).getPropertyValue('--' + type + '-height').replace('px', ''));
     cssVariables.style.setProperty('--' + type + '-height', height - ((originalGap / 10) * (setSize)) / 2 + 'px');
-
-    // css pseudo elements
-    let before = -setSize + 0;
-    let after = (10 + before) + 6;
-    cssVariables.style.setProperty('--' + type + '-after', after + 'px');
-    cssVariables.style.setProperty('--' + type + '-before', before + 'px');
 }
 
 /*

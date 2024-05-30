@@ -12,29 +12,34 @@
 </head>
 <body>
     <div class="container">
-        <!-- hours -->
-        <div class="triangle" id="hours-triangle">
-            <div class="left" id="hours-left"></div>
-            <div class="right" id="hours-right"></div>
-            <div class="bottom" id="hours-bottom"></div>
-            <!-- end hours -->
-            <!-- minutes -->
-            <div class="triangle" id="minutes-triangle">
-                <div class="left" id="minutes-left"></div>
-                <div class="right" id="minutes-right"></div>
-                <div class="bottom" id="minutes-bottom"></div>
-                <!-- end minutes -->
-                <!-- seconds -->
-                <div class="triangle" id="seconds-triangle">
-                    <div class="left" id="seconds-left"></div>
-                    <div class="right" id="seconds-right"></div>
-                    <div class="bottom" id="seconds-bottom"></div>
+        <div class="clock">
+            <!-- hours -->
+            <div class="triangle" id="hours-triangle">
+                <div class="left" id="hours-left"></div>
+                <div class="right" id="hours-right"></div>
+                <div class="bottom" id="hours-bottom"></div>
+                <!-- end hours -->
+                <!-- minutes -->
+                <div class="triangle" id="minutes-triangle">
+                    <div class="left" id="minutes-left"></div>
+                    <div class="right" id="minutes-right"></div>
+                    <div class="bottom" id="minutes-bottom"></div>
+                    <!-- end minutes -->
+                    <!-- seconds -->
+                    <div class="triangle" id="seconds-triangle">
+                        <div class="left" id="seconds-left"></div>
+                        <div class="right" id="seconds-right"></div>
+                        <div class="bottom" id="seconds-bottom"></div>
+                    </div>
+                    <!-- end seconds -->
                 </div>
-                <!-- end seconds -->
+                <!-- end triangle minutes -->
             </div>
-            <!-- end triangle minutes -->
+            <!-- end triangle hours -->
+            <div id="pseudo-hours"></div>
+            <div id="pseudo-minutes"></div>
+            <div id="pseudo-seconds"></div>
         </div>
-        <!-- end triangle hours -->
         <!-- example -->
         <div class="full">
             <div class="example" id="first">

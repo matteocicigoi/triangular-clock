@@ -9,7 +9,7 @@
 /* custom properties */
 
 :root {
-    --size: 450px;
+    --size: 650px;
     --height: 0px;
     --gap: 100px;
 
@@ -38,6 +38,10 @@ div.container {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+}
+
+div.clock {
+    position: relative;
 }
 
 div.triangle {
@@ -75,29 +79,27 @@ div.bottom {
     background-color: red;
 }
 
-div.left::before,
-div.right::before,
-div.bottom::before,
-div.bottom::after,
-div.left::after,
-div.right::after {
-    content: '';
-    width: calc(var(--size) / 18);
-    height: 3px;
-    border: #00CED1 1px solid;
-    display: none;
+div#pseudo-seconds::before,
+div#pseudo-seconds::after,
+div#pseudo-minutes::before,
+div#pseudo-minutes::after,
+div#pseudo-hours::before,
+div#pseudo-hours::after {
+    position: absolute;
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    content: '';
+    height: 3px;
+    display: block;
     box-sizing: border-box;
+    border: #00CED1 1px solid;
 }
-div.left::after,
-div.right::after,
-div.bottom::after {
-    content: '';
-    width: calc(var(--size) / 9);
-    height: 3px;
+
+div#pseudo-seconds::after,
+div#pseudo-minutes::after,
+div#pseudo-hours::after {
     border: #FFD700 1px solid;
-    display: none;
-    margin: 0 auto;
 }
 
 /* hours */
@@ -119,13 +121,13 @@ div#hours-bottom {
     background-color: var(--hours-color);
     width: var(--hours-size);
 }
-div#hours-bottom::before {
-    margin-top: var(--hours-before);
-    display: block;
+div#pseudo-hours::before{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 94px);
+    width: calc(var(--size) / 18 / 0.7);
 }
-div#hours-bottom::after {
-    margin-top: var(--hours-after);
-    display: block;
+div#pseudo-hours::after{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 61px);
+    width: calc(var(--size) / 9 / 0.7);
 }
 
 /* minutes */
@@ -147,13 +149,13 @@ div#minutes-bottom {
     background-color: var(--minutes-color);
     width: var(--minutes-size);
 }
-div#minutes-bottom::before {
-    margin-top: var(--minutes-before);
-    display: block;
+div#pseudo-minutes::before{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 130px);
+    width: calc(var(--size) / 18 / 1.2);
 }
-div#minutes-bottom::after {
-    margin-top: var(--minutes-after);
-    display: block;
+div#pseudo-minutes::after{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 97px);
+    width: calc(var(--size) / 9 / 1.2);
 }
 
 /* seconds */
@@ -175,13 +177,13 @@ div#seconds-bottom {
     background-color: var(--seconds-color);
     width: var(--seconds-size);
 }
-div#seconds-bottom::before {
-    margin-top: var(--seconds-before);
-    display: block;
+div#pseudo-seconds::before{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 167px);
+    width: calc(var(--size) / 18 / 1.7);
 }
-div#seconds-bottom::after {
-    margin-top: var(--seconds-after);
-    display: block;
+div#pseudo-seconds::after{
+    top: calc(((var(--size) * 1.73205080757) / 2) - 134px);
+    width: calc(var(--size) / 9 / 1.7);
 }
 
 /* example */
