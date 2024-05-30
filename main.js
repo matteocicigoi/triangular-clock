@@ -68,7 +68,6 @@ function spacing(type, cssVariables, originalGap, setSize) {
     Update Time
 */
 function updateTime() {
-    seconds++;
     if(seconds === 60){
         seconds = 0;
         minutes++;
@@ -80,13 +79,14 @@ function updateTime() {
     if(hours === 24){
         hours = 0;
     }
-
+    
     cssVariables.style.setProperty('--' + 'seconds' + '-height', START_HEIGHT + 'px');
     cssVariables.style.setProperty('--' + 'minutes' + '-height', START_HEIGHT + 'px');
     cssVariables.style.setProperty('--' + 'hours' + '-height', START_HEIGHT + 'px');
     changeTime('seconds', seconds, ORIGINAL_SIZE_SECONDS, START_GAP);
     changeTime('minutes', minutes, ORIGINAL_SIZE_MINUTES, START_GAP);
     changeTime('hours', hours, ORIGINAL_SIZE_HOURS, START_GAP);
+    seconds++;
 }
 
 // get time
