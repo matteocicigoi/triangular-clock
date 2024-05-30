@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangular Clock</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <!-- end favicon -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- hours -->
+        <div class="triangle" id="hours-triangle">
+            <div class="left" id="hours-left"></div>
+            <div class="right" id="hours-right"></div>
+            <div class="bottom" id="hours-bottom"></div>
+            <!-- end hours -->
+            <!-- minutes -->
+            <div class="triangle" id="minutes-triangle">
+                <div class="left" id="minutes-left"></div>
+                <div class="right" id="minutes-right"></div>
+                <div class="bottom" id="minutes-bottom"></div>
+                <!-- end minutes -->
+                <!-- seconds -->
+                <div class="triangle" id="seconds-triangle">
+                    <div class="left" id="seconds-left"></div>
+                    <div class="right" id="seconds-right"></div>
+                    <div class="bottom" id="seconds-bottom"></div>
+                </div>
+                <!-- end seconds -->
+            </div>
+            <!-- end triangle minutes -->
+        </div>
+        <!-- end triangle hours -->
+        <!-- example -->
+        <div class="full">
+            <div class="example" id="first">
+                <span>0 - 9</span>
+            </div>
+            <div class="example" id="second">
+                <span>10 - 19</span>
+            </div>
+            <div class="example" id="third">
+                <span>20 - 29</span>
+            </div>
+            <div class="example" id="fourth">
+                <span>30 - 39</span>
+            </div>
+            <div class="example" id="fifth">
+                <span>40 - 49</span>
+            </div>
+            <div class="example" id="sixth">
+                <span>50 - 59</span>
+            </div>
+        </div>
+        <!-- end example -->
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

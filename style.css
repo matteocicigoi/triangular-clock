@@ -1,0 +1,224 @@
+/* reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* custom properties */
+
+:root {
+    --size: 450px;
+    --height: 0px;
+    --gap: 100px;
+
+    --seconds-color: rgb(145, 255, 0);
+    --minutes-color: rgb(30, 36, 30);
+    --hours-color: rgb(143, 143, 194);
+
+    --zero-to-ten-color: #00FFC6;
+    --ten-to-twenty-color: #FF005C;
+    --twenty-to-thirty-color: #00FF4F;
+    --thirty-to-forty-color: #FFBF00;
+    --forty-to-fifty-color: #8A00FF;
+    --fifty-to-sixty-color: #FF8C00;
+}
+
+body {
+    background-color: #0D0D0D;
+}
+
+/* common */
+
+div.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.triangle {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: calc(var(--gap) / 2);
+}
+div.left {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    background-color: red;
+    transform-origin: top left;
+    transform: rotate(30deg);
+}
+
+div.right {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    width: 1px;
+    background-color: red;
+    transform-origin: top right;
+    transform: rotate(-30deg);
+}
+
+div.bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: red;
+}
+
+div.left::before,
+div.right::before,
+div.bottom::before,
+div.bottom::after,
+div.left::after,
+div.right::after {
+    content: '';
+    width: calc(var(--size) / 18);
+    height: 3px;
+    border: #00CED1 1px solid;
+    display: none;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+div.left::after,
+div.right::after,
+div.bottom::after {
+    content: '';
+    width: calc(var(--size) / 9);
+    height: 3px;
+    border: #FFD700 1px solid;
+    display: none;
+    margin: 0 auto;
+}
+
+/* hours */
+
+div#hours-triangle {
+    width: var(--hours-size);
+    margin-top: calc(var(--hours-height));
+    height: calc((var(--hours-size) * 1.73205080757) / 2);
+}
+div#hours-left {
+    background-color: var(--hours-color);
+    height: var(--hours-size);
+}
+div#hours-right {
+    background-color: var(--hours-color);
+    height: var(--hours-size);
+}
+div#hours-bottom {
+    background-color: var(--hours-color);
+    width: var(--hours-size);
+}
+div#hours-bottom::before {
+    margin-top: var(--hours-before);
+    display: block;
+}
+div#hours-bottom::after {
+    margin-top: var(--hours-after);
+    display: block;
+}
+
+/* minutes */
+
+div#minutes-triangle {
+    width: var(--minutes-size);
+    margin-top: var(--minutes-height);
+    height: calc((var(--minutes-size) * 1.73205080757) / 2);
+}
+div#minutes-left {
+    background-color: var(--minutes-color);
+    height: var(--minutes-size);
+}
+div#minutes-right {
+    background-color: var(--minutes-color);
+    height: var(--minutes-size);
+}
+div#minutes-bottom {
+    background-color: var(--minutes-color);
+    width: var(--minutes-size);
+}
+div#minutes-bottom::before {
+    margin-top: var(--minutes-before);
+    display: block;
+}
+div#minutes-bottom::after {
+    margin-top: var(--minutes-after);
+    display: block;
+}
+
+/* seconds */
+
+div#seconds-triangle {
+    width: var(--seconds-size);
+    margin-top: var(--seconds-height);
+    height: calc((var(--seconds-size) * 1.73205080757) / 2);
+}
+div#seconds-left {
+    background-color: var(--seconds-color);
+    height: var(--seconds-size);
+}
+div#seconds-right {
+    background-color: var(--seconds-color);
+    height: var(--seconds-size);
+}
+div#seconds-bottom {
+    background-color: var(--seconds-color);
+    width: var(--seconds-size);
+}
+div#seconds-bottom::before {
+    margin-top: var(--seconds-before);
+    display: block;
+}
+div#seconds-bottom::after {
+    margin-top: var(--seconds-after);
+    display: block;
+}
+
+/* example */
+
+div.full {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+div.example {
+    color: white;
+    width: 65px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+div.example#first {
+background-color: var(--zero-to-ten-color);    
+}
+div.example#second {
+background-color: var(--ten-to-twenty-color);
+}
+div.example#third {
+background-color: var(--twenty-to-thirty-color);
+}
+div.example#fourth {
+background-color: var(--thirty-to-forty-color);    
+}
+div.example#fifth {
+background-color: var(--forty-to-fifty-color);
+}
+div.example#sixth {
+background-color: var(--fifty-to-sixty-color);
+}
